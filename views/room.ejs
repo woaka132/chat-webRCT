@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Socket.IO</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script> const ROOM_ID = "<%= roomId %>" </script>
+    <script defer src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <br>
+    <h2>Chat implementando Websockets con Node.js</h2>
+    <div class="wrapper">
+        <div class="anillo">
+            <canvas id="lienzo" width="400" height="400"></canvas>
+            <div class="textos">
+                <br>
+                <label for="proceso">Nombre del proceso:</label>
+                <input id="proceso" name="texto" readonly="true" class="textin" />
+                <br>
+                <label for="tiempo">Tiempo del proceso:</label>
+                <input id="tiempo" name="texto" readonly="true" class="textin" />
+                <div class="container">
+                    <div class="buttons">
+                        <a href="#" class="btn btn-1" id="random">Random</a>
+                        <a href="#" class="btn btn-1" id="enviar_tiempo">Enviar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="chat">
+            <textarea id="mensajes" readonly="true"></textarea>
+            <br>
+            <br>
+            <div class="inputBox">
+                <input type="text" id="texto" required="required">
+                <span>Ingresa tu mensaje</span>
+                <i></i>
+            </div>
+            <div class="container">
+                <div class="buttons">
+                    <a href="#" class="btn btn-1" id="enviar">Enviar</a>
+                    <a href="#" class="btn btn-1" id="clear" onclick="javascript:eraseText();">Limpiar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
